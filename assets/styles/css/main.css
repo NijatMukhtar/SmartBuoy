@@ -41,4 +41,23 @@
 .search-bar-wrapper__bar .dropdown ul li a {
   text-align: center;
   font-size: larger;
+}
+
+#baku-main {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#baku-main .baku-map {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.image-wrapper {
+  width: 60vw;
+  height: 50vh;
+  background: url("/assets/images/baku-map.png") center/cover;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }/*# sourceMappingURL=main.css.map */
