@@ -1,0 +1,53 @@
+.navbar
+{
+    .navbar-nav
+    {
+        width: 50%;
+        justify-content: space-evenly;
+    }
+}
+.search-bar-wrapper
+{
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    &__bar
+    {
+        margin: 0 auto;
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        h4 
+        {
+            padding: 0;
+            margin: 0;
+            padding-right: 10px !important;
+            font-size: 30px;
+        }
+
+        .dropdown
+        {
+            button 
+            {
+                width: 160px;
+                height: 50px;
+                font-size: larger;
+                border-radius: 20px;
+            }
+            ul{
+                border-radius: 20px;
+                li{
+                    width: 160px;
+                    display: flex;
+                    justify-content: center;
+                    a{
+                        text-align: center;
+                        font-size: larger;
+                    }
+                }
+            }
+        }
+    }
+}

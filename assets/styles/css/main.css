@@ -1,0 +1,44 @@
+.navbar .navbar-nav {
+  width: 50%;
+  justify-content: space-evenly;
+}
+
+.search-bar-wrapper {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+.search-bar-wrapper__bar {
+  margin: 0 auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+}
+.search-bar-wrapper__bar h4 {
+  padding: 0;
+  margin: 0;
+  padding-right: 10px !important;
+  font-size: 30px;
+}
+.search-bar-wrapper__bar .dropdown button {
+  width: 160px;
+  height: 50px;
+  font-size: larger;
+  border-radius: 20px;
+}
+.search-bar-wrapper__bar .dropdown ul {
+  border-radius: 20px;
+}
+.search-bar-wrapper__bar .dropdown ul li {
+  width: 160px;
+  display: flex;
+  justify-content: center;
+}
+.search-bar-wrapper__bar .dropdown ul li a {
+  text-align: center;
+  font-size: larger;
+}/*# sourceMappingURL=main.css.map */
