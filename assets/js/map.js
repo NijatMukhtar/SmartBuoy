@@ -1,12 +1,8 @@
 
-
-
 var queryString = decodeURIComponent(window.location.search);
 queryString = queryString.substring(1);
 var queries = queryString.split("&");
-var split = queries[0].split("=")
-
-function SetMap(city){
+var split = queries[0].split("=");
 
     const Vana = [43.2141,27.9147] 
     const Baku = [40.37767,49.867092] 
@@ -19,20 +15,26 @@ function SetMap(city){
 
     const Bakubeachnames = ["Shikh Beach","Mambo Beach Club","1001 Gecə Çimərliyi","Bilgah Beach Hotel","Blue Wave Beach Resort","Buzovna beach","Sunny Beach Zagulba","Amburan Beach Club","Dostluq Cimerlik","Mayak Beach"]
 
-    const Vanabeachnames = ["Varna beach","Sahara beach","Trakata beach","Rappongi Beach","Fichoza Beach Veteran","Beach Golden Sands","Asparuhovo beach","Albena Beach","Nirvana Beach","Noi Beach"
-    ]
+    const Vanabeachnames = ["Varna beach","Sahara beach","Trakata beach","Rappongi Beach","Fichoza Beach Veteran","Beach Golden Sands","Asparuhovo beach","Albena Beach","Nirvana Beach","Noi Beach" ]
     
-    const Bakubeachinfo =["Dalga yuksekliyi: 1.2m</br> Temperatur: 22C</br> Temizlik: OK","Dalga yuksekliyi: 1.2m</br> Temperatur: 22C</br> Temizlik: OK","Dalga yuksekliyi: 1.2m</br> Temperatur: 22C</br> Temizlik: OK","Dalga yuksekliyi: 1.2m</br> Temperatur: 22C</br> Temizlik: OK","Dalga yuksekliyi: 1.2m</br> Temperatur: 22C</br> Temizlik: OK","Dalga yuksekliyi: 1.2m</br> Temperatur: 22C</br> Temizlik: OK","Dalga yuksekliyi: 1.2m</br> Temperatur: 22C</br> Temizlik: OK","Dalga yuksekliyi: 1.2m</br> Temperatur: 22C</br> Temizlik: OK","Dalga yuksekliyi: 1.2m</br> Temperatur: 22C</br> Temizlik: OK","Dalga yuksekliyi: 1.2m</br> Temperatur: 22C</br> Temizlik: OK"]
+    const Bakubeachinfo =["Wave Height: 1.2m</br> Temperature: 22C</br> Cleanliness Level: OK","Wave Height: 1.2m</br> Temperature: 22C</br> Cleanliness Level: OK","Wave Height: 1.2m</br> Temperature: 22C</br> Cleanliness Level: OK","Wave Height: 1.2m</br> Temperature: 22C</br> Cleanliness Level: OK","Wave Height: 1.2m</br> Temperature: 22C</br> Cleanliness Level: OK","Wave Height: 1.2m</br> Temperature: 22C</br> Cleanliness Level: OK","Wave Height: 1.2m</br> Temperature: 22C</br> Cleanliness Level: OK","Wave Height: 1.2m</br> Temperature: 22C</br> Cleanliness Level: OK","Wave Height: 1.2m</br> Temperature: 22C</br> Cleanliness Level: OK","Wave Height: 1.2m</br> Temperature: 22C</br> Cleanliness Level: OK"]
 
-    const Vanabeachinfo =["Dalga yuksekliyi: 1.2m</br> Temperatur: 22C</br> Temizlik: OK","Dalga yuksekliyi: 1.2m</br> Temperatur: 22C</br> Temizlik: OK","Dalga yuksekliyi: 1.2m</br> Temperatur: 22C</br> Temizlik: OK","Dalga yuksekliyi: 1.2m</br> Temperatur: 22C</br> Temizlik: OK","Dalga yuksekliyi: 1.2m</br> Temperatur: 22C</br> Temizlik: OK","Dalga yuksekliyi: 1.2m</br> Temperatur: 22C</br> Temizlik: OK","Dalga yuksekliyi: 1.2m</br> Temperatur: 22C</br> Temizlik: OK","Dalga yuksekliyi: 1.2m</br> Temperatur: 22C</br> Temizlik: OK","Dalga yuksekliyi: 1.2m</br> Temperatur: 22C</br> Temizlik: OK","Dalga yuksekliyi: 1.2m</br> Temperatur: 22C</br> Temizlik: OK"]
+    const Vanabeachinfo =["Wave Height: 1.2m</br> Temperature: 22C</br> Cleanliness Level: OK","Wave Height: 1.2m</br> Temperature: 22C</br> Cleanliness Level: OK","Wave Height: 1.2m</br> Temperature: 22C</br> Cleanliness Level: OK","Wave Height: 1.2m</br> Temperature: 22C</br> Cleanliness Level: OK","Wave Height: 1.2m</br> Temperature: 22C</br> Cleanliness Level: OK","Wave Height: 1.2m</br> Temperature: 22C</br> Cleanliness Level: OK","Wave Height: 1.2m</br> Temperature: 22C</br> Cleanliness Level: OK","Wave Height: 1.2m</br> Temperature: 22C</br> Cleanliness Level: OK","Wave Height: 1.2m</br> Temperature: 22C</br> Cleanliness Level: OK","Wave Height: 1.2m</br> Temperature: 22C</br> Cleanliness Level: OK"]
 
+function SetMap(city){
+    
     const myIcon = L.icon({
         iconUrl: 'test2_files/marker-icon.png',
-        iconSize: [20, 20],
+        iconSize: [20, 30],
         
     });
-
+    
     if(city == "Baku"){
+    
+        for (let i = 0; i < Bakubeachnames.length; i++) {
+            document.getElementById(i).innerHTML= Bakubeachnames[i];
+          }
+
         var map = L.map('map').setView([Baku[0],Baku[1]], 12);
 
         var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -43,8 +45,14 @@ function SetMap(city){
                 let marker = L.marker([BakuBeaches[i][0],BakuBeaches[i][1]], {icon: myIcon}).addTo(map);
                 marker.bindPopup("<b>"+Bakubeachnames[i]+"</b></br>"+Bakubeachinfo[i]).openPopup();
         }
+
     }
     else{
+    
+        for (let i = 0; i < Vanabeachnames.length; i++) {
+            document.getElementById(i).innerHTML= Vanabeachnames[i];
+          }
+
         var map = L.map('map').setView([Vana[0],Vana[1]], 12);
 
         var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -57,6 +65,5 @@ function SetMap(city){
                 marker.bindPopup("<b>"+Vanabeachnames[i]+"</b></br>"+Vanabeachinfo[i]).openPopup();
         } 
     }
-    
 }
 SetMap(split[1])

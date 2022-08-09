@@ -28,9 +28,28 @@
 
 		.leaflet-container {
 			height: 100vh;
-			width: 100vh;
+			width: 80vh;
 			max-width: 100%;
 			max-height: 100%;
+		}
+
+		.beach-list{
+			height: 44px;
+			width: 100%;
+			background-color: rgb(54, 179, 221);
+			display:block;
+			color: white;
+			font-family:Arial, Helvetica, sans-serif;
+			text-align: left;
+			
+		}
+		.beach-list:hover{
+			background-color: rgb(30, 133, 167);
+		}
+		h4{
+			color: white;
+			font-family: Arial, Helvetica, sans-serif;
+			text-align: center;
 		}
 	</style>
 
@@ -41,11 +60,24 @@
 
 
 
-	<div id="map" style="width: 200vh; height: 100vh; position: relative;"
+	<div id="map" style="width: 80%; height: 100vh; display: inline-block;"
 		class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom"
 		tabindex="0">
 	</div>
-
+	<div id = "beachList" style = "width: 20%; height: 100vh; background-color: rgb(54, 179, 221); float: right; ">
+			<h4>Beaches</h4>
+			<div class="beach-list" onclick="bindPin()"><a id = "0"></a></div>
+			<div class="beach-list"><a id = "1"></a></div>
+			<div class="beach-list"><a id = "2"></a></div>
+			<div class="beach-list"><a id = "3"></a></div>
+			<div class="beach-list"><a id = "4"></a></div>
+			<div class="beach-list"><a id = "5"></a></div>
+			<div class="beach-list"><a id = "6"></a></div>
+			<div class="beach-list"><a id = "7"></a></div>
+			<div class="beach-list"><a id = "8"></a></div>
+			<div class="beach-list"><a id = "9"></a></div>
+		</div>
+	
 
 <script src="assets/js/map.js"></script>
 
