@@ -43,7 +43,6 @@ function SetMap(city){
                 let marker = L.marker([BakuBeaches[i][0],BakuBeaches[i][1]], {icon: myIcon}).addTo(map);
                 marker.bindPopup("<b>"+Bakubeachnames[i]+"</b></br>"+Bakubeachinfo[i]).openPopup();
         }
-
     }
     else{
     
@@ -67,20 +66,13 @@ function SetMap(city){
 }
 
 function divClicked(id){
-
     var data = document.getElementById("data");
     if(globalCity == "Baku"){
         data.innerHTML = Bakubeachnames[id] + "<br>" + Bakubeachinfo[id];
-
     }
     else{
         data.innerHTML = Vanabeachnames[id] + "<br>" +Vanabeachinfo[id];
     }
-
     }
     
-    
-
-  
-
 SetMap(split[1])
