@@ -17,15 +17,11 @@ var globalCity;
 
     const Vanabeachnames = ["Varna beach","Sahara beach","Trakata beach","Rappongi Beach","Fichoza Beach Veteran","Beach Golden Sands","Asparuhovo beach","Albena Beach","Nirvana Beach","Noi Beach" ]
     
-    const Bakubeachinfo =["Wave Height: 1.2m</br> Temperature: 22C</br> Cleanliness Level: OK","Wave Height: 0.6m</br> Temperature: 24C</br> Cleanliness Level: Good","Wave Height: 1.5m</br> Temperature: 21C</br> Cleanliness Level: Excellent","Wave Height: 4.2m</br> Temperature: 19C</br> Cleanliness Level: OK","Wave Height: 1.3m</br> Temperature: 21C</br> Cleanliness Level: OK","Wave Height: 0.7m</br> Temperature: 26C</br> Cleanliness Level: OK","Wave Height: 1.3m</br> Temperature: 28C</br> Cleanliness Level: OK","Wave Height: 1.3m</br> Temperature: 23C</br> Cleanliness Level: Good","Wave Height: 1.6m</br> Temperature: 23C</br> Cleanliness Level: OK","Wave Height: 1.3m</br> Temperature: 12C</br> Cleanliness Level: OK"]
-    const Vanabeachinfo =["Wave Height: 1.1m</br> Temperature: 22C</br> Cleanliness Level: Bad","Wave Height: 1.6m</br> Temperature: 12C</br> Cleanliness Level: OK","Wave Height: 0.9m</br> Temperature: 24C</br> Cleanliness Level: OK","Wave Height: 2.2m</br> Temperature: 23C</br> Cleanliness Level: Good","Wave Height: 1.5m</br> Temperature: 22C</br> Cleanliness Level: OK","Wave Height: 0.6m</br> Temperature: 23C</br> Cleanliness Level: OK","Wave Height: 1.1m</br> Temperature: 16C</br> Cleanliness Level: OK","Wave Height: 1.1m</br> Temperature: 25C</br> Cleanliness Level: OK","Wave Height: 1.4m</br> Temperature: 21C</br> Cleanliness Level: Bad","Wave Height: 0.9m</br> Temperature: 21C</br> Cleanliness Level: OK"]
+    const Vanabeachinfo =["Wave Height: 1.2m</br> Temperature: 22C</br> Cleanliness Level: OK","Wave Height: 0.6m</br> Temperature: 24C</br> Cleanliness Level: Good","Wave Height: 1.5m</br> Temperature: 21C</br> Cleanliness Level: Excellent","Wave Height: 4.2m</br> Temperature: 19C</br> Cleanliness Level: OK","Wave Height: 1.3m</br> Temperature: 21C</br> Cleanliness Level: OK","Wave Height: 0.7m</br> Temperature: 26C</br> Cleanliness Level: OK","Wave Height: 1.3m</br> Temperature: 28C</br> Cleanliness Level: OK","Wave Height: 1.3m</br> Temperature: 23C</br> Cleanliness Level: Good","Wave Height: 1.6m</br> Temperature: 23C</br> Cleanliness Level: OK","Wave Height: 1.3m</br> Temperature: 12C</br> Cleanliness Level: OK"]
+    const Bakubeachinfo =["Wave Height: 1.1m</br> Temperature: 22C</br> Cleanliness Level: Bad","Wave Height: 1.6m</br> Temperature: 12C</br> Cleanliness Level: OK","Wave Height: 0.9m</br> Temperature: 24C</br> Cleanliness Level: OK","Wave Height: 2.2m</br> Temperature: 23C</br> Cleanliness Level: Good","Wave Height: 1.5m</br> Temperature: 22C</br> Cleanliness Level: OK","Wave Height: 0.6m</br> Temperature: 23C</br> Cleanliness Level: OK","Wave Height: 1.1m</br> Temperature: 16C</br> Cleanliness Level: OK","Wave Height: 1.1m</br> Temperature: 25C</br> Cleanliness Level: OK","Wave Height: 1.4m</br> Temperature: 21C</br> Cleanliness Level: Bad","Wave Height: 0.9m</br> Temperature: 21C</br> Cleanliness Level: OK"]
 
 function SetMap(city){
     globalCity = city
-    const myIcon = L.icon({
-        iconUrl: 'test2_files/marker-icon.png',
-        iconSize: [20, 30],
-    });
     
     if(city == "Baku"){
     
@@ -40,6 +36,28 @@ function SetMap(city){
         }).addTo(map);
     
         for(let i=0;i<BakuBeaches.length;i++){
+            switch(i / 3){
+            case 0:
+                var myIcon = L.icon({
+                iconUrl: 'test2_files/red-flag.png',
+                iconSize: [40, 40],
+            });
+            break;
+            case 1:
+                var myIcon = L.icon({
+                    iconUrl: 'test2_files/green-flag.png',
+                    iconSize: [40, 40],
+                });
+            break;
+            case 2:
+                var myIcon = L.icon({
+                    iconUrl: 'test2_files/yellow-flag.png',
+                    iconSize: [40, 40],
+                });
+            break;
+            default:
+                break;
+            }
                 let marker = L.marker([BakuBeaches[i][0],BakuBeaches[i][1]], {icon: myIcon}).addTo(map);
                 marker.bindPopup("<b>"+Bakubeachnames[i]+"</b></br>"+Bakubeachinfo[i]).openPopup();
         }
@@ -58,6 +76,28 @@ function SetMap(city){
     
     
         for(let i=0;i<VanaBeaches.length;i++){
+            switch(i / 3){
+                case 0:
+                    var myIcon = L.icon({
+                    iconUrl: 'test2_files/red-flag.png',
+                    iconSize: [40, 40],
+                });
+                break;
+                case 1:
+                    var myIcon = L.icon({
+                        iconUrl: 'test2_files/green-flag.png',
+                        iconSize: [40, 40],
+                    });
+                break;
+                case 2:
+                    var myIcon = L.icon({
+                        iconUrl: 'test2_files/yellow-flag.png',
+                        iconSize: [40, 40],
+                    });
+                break;
+                default:
+                    break;
+                }
                 let marker = L.marker([VanaBeaches[i][0],VanaBeaches[i][1]], {icon: myIcon}).addTo(map);
                 marker.bindPopup("<b>"+Vanabeachnames[i]+"</b></br>"+Vanabeachinfo[i]).openPopup();
         } 
