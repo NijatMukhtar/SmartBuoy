@@ -36,7 +36,7 @@ function SetMap(city){
         }).addTo(map);
     
         for(let i=0;i<BakuBeaches.length;i++){
-            switch(i / 3){
+            switch(i % 3){
             case 0:
                 var myIcon = L.icon({
                 iconUrl: 'test2_files/red-flag.png',
@@ -113,6 +113,7 @@ function divClicked(id){
     else{
         data.innerHTML = Vanabeachnames[id] + "<br>" +Vanabeachinfo[id];
     }
+    
     }
     
 SetMap(split[1])
